@@ -109,7 +109,7 @@ Use the **Deploy to IBM Cloud** button **OR** create the services and run locall
 Clone the `codepattern-multitier-vpc` repo locally. In a terminal, run:
 
 ```bash
-git clone https://github.com/codpattern-multitier-vpc
+git clone https://github.com/IBM/codepattern-multitier-vpc
 ```
 
 <!--
