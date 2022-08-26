@@ -62,9 +62,17 @@ variable "dbtier-subnet-zone2" {
 variable "ssh-public-key" {
   description = "Define ssh key for compute instances"
 }
+#variable "image" {
+#  description = "Define OS image for compute instances (ubuntu-16-04-amd64)"
+#  default     = "r006-bf0495b9-648e-465f-ab7d-f5e048bd123d" 
+#}
+#variable "image" {
+#  description = "Define OS image for compute instances (ubuntu-20-04-amd64)"
+#  default     = "r006-988caa8b-7786-49c9-aea6-9553af2b1969"
+#}
 variable "image" {
-  description = "Define OS image for compute instances (ubuntu-20-04-amd64)"
-  default     = "r006-988caa8b-7786-49c9-aea6-9553af2b1969"
+  description = "Define OS image for compute instances (ubuntu-22-04-amd64)"
+  default     = "r006-b5427052-bf0d-400a-a55c-e70894560b96"
 }
 variable "webappserver-name" {
   description = "Define webapp instance name"
