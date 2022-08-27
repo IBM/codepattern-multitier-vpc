@@ -1,5 +1,6 @@
 ---
 # Install & Configure NGINX & Wordpress
 
+- include: configure-phpfpm.yaml
 - include: configure-wordpress.yaml
 - include: configure-nginx.yaml

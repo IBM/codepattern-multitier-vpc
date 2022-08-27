@@ -1,21 +1,24 @@
 ---
-# Common stuff goes here
+- name: Copy the NGINX repository definition
+  copy: src=nginx.repo dest=/etc/yum.repos.d/
 
-- name: Add LogDNA repo and install
-  shell: |
-    echo "deb https://repo.logdna.com stable main" | sudo tee /etc/apt/sources.list.d/logdna.list
-    wget -O- https://repo.logdna.com/logdna.gpg | sudo apt-key add -
-    apt-get update
-    apt-get install logdna-agent < "/dev/null"
-  become: yes
+- name: Copy the EPEL repository definition
+  copy: src=epel.repo dest=/etc/yum.repos.d/
 
-- name: Configure LogDNA
-  shell: |
-     logdna-agent -k {{ logdna_key }}
-     logdna-agent -s LOGDNA_APIHOST=api.us-south.logging.cloud.ibm.com
-     logdna-agent -s LOGDNA_LOGHOST=logs.us-south.logging.cloud.ibm.com
-  become: yes
+- name: Copy the REMI repository definition
+  copy: src=remi.repo dest=/etc/yum.repos.d/
 
-- name: Set LogDNA to autostart
-  shell: systemctl enable logdna-agent
-  become: yes
+- name: Create the GPG key for NGINX
+  copy: src=RPM-GPG-KEY-NGINX dest=/etc/pki/rpm-gpg
+
+- name: Create the GPG key for EPEL
+  copy: src=RPM-GPG-KEY-EPEL-7 dest=/etc/pki/rpm-gpg
+
+- name: Create the GPG key for REMI
+  copy: src=RPM-GPG-KEY-remi dest=/etc/pki/rpm-gpg
+  
+- name: Install Firewalld
+  yum: name=firewalld state=present
+
+- name: Firewalld service state
+  service: name=firewalld state=started enabled=yes
