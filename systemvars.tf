@@ -17,17 +17,11 @@ variable "redhat-8-3-amd64" {
 variable "redhat-7-9-amd64" {
   default = "r006-e279f5d7-fa19-4294-979e-7a6d048fbe71"
 }
-variable "ubuntu-22-04-amd64" {
-  default = "r006-b5427052-bf0d-400a-a55c-e70894560b96"
-}
 variable "ubuntu-20-04-amd64" {
   default = "r006-988caa8b-7786-49c9-aea6-9553af2b1969"
 }
 variable "ubuntu-18-04-amd64" {
   default = "r006-ed3f775f-ad7e-4e37-ae62-7199b4988b00"
-}
-variable "ubuntu-16-04-amd64" {
-  default = "r006-bf0495b9-648e-465f-ab7d-f5e048bd123d"
 }
 variable "windows-2019-amd64" {
   default = "r006-7e605d5f-2632-4ed2-a0c1-580af25decd4"
