@@ -1,0 +1,6 @@
+dbpassword: securepassw0rd
+logdna_key: 143c30a06ac6dfae03b3a84259bf1b9e
+sysdig_key: 55e7f496-af78-4e0d-89f7-fa040e259ebd
+app_name: www.drawit.tech
+source_db: 172.21.1.4
+replica_db: 172.21.9.4

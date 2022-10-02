@@ -1,37 +1,41 @@
 ---
-# Basic Setup of MySQL
+# Basic setup of MySQL
 
-- name: Change mysqld.cnf to listen on all interfaces
-  shell: |
-    sed -i "s/^\(bind-address\s*=\s*\).*\$/\10.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
-  become: yes
+- name: Install required pip modules
+  pip:
+    name:
+      - PyMySQL
+    state: present
+    executable: pip3
+
+- name: Ensure MySQL service is running
+  systemd:
+    name: mysqld
+    state: restarted
+    enabled: yes
+
+- name: Set MySQL root password
+  mysql_user:
+    login_user: root
+    login_password: "{{ dbpassword }}" 
+    user: root
+    check_implicit_admin: true
+    password: "{{ dbpassword }}"
+    host: localhost
 
 - name: Create wordpress database on the server
   mysql_db:
     name: wordpress
     login_user: root
-    login_unix_socket: /var/run/mysqld/mysqld.sock
+    login_password: "{{ dbpassword }}" 
     state: present
 
 - name: Create wordpress user
   mysql_user:
     login_user: root
-    login_unix_socket: /var/run/mysqld/mysqld.sock
+    login_password: "{{ dbpassword }}" 
     name: wpuser
     password: "{{ dbpassword }}"
     priv: 'wordpress.*:ALL,GRANT'
     host: '%'
     state: present
-
-- name: Add logDNA tag
-  shell: logdna-agent -t database
-  become: yes
-
-- name: restart LogDNA
-  shell: service logdna-agent restart
-  become: yes
-
-- name: Install & Configure sysdig on DB server
-  shell: |
-      curl -sL https://ibm.biz/install-sysdig-agent | sudo bash -s -- --access_key {{ sysdig_key }}  -c ingest.us-south.monitoring.cloud.ibm.com --collector_port 6443 --secure true -ac "sysdig_capture_enabled: false" --tags role:database,location:us-south
-  become: yes

@@ -2,4 +2,4 @@
 # Install & Configure NGINX & Wordpress
 
 - include: configure-wordpress.yaml
-- include: configure-nginx.yaml
+#- include: configure-nginx.yaml

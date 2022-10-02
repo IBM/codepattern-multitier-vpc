@@ -1,5 +1,5 @@
 ---
-# Configure the source mysql database for replication
+# Configure the source MySQL database for replication
 
 - name: Add replication settings to server-id my.cnf for replica db
   ini_file:

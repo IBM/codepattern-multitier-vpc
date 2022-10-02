@@ -1,5 +1,4 @@
 ---
-# Install mySQL and configure mySQL sourcedb for wordpress
+# Install MySQL and configure MySQL sourcedb for wordpress
 
 - include: create-wordpress-db.yaml
-- include: configure-replication-sourcedb.yaml
