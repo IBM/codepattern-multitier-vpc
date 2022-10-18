@@ -269,7 +269,6 @@ using the default configuration.
 - [drawIT](https://github.com/IBM/drawit)
 - [buildIT](https://github.com/IBM/buildit)
 - [IT Architecture Diagrams](https://github.com/IBM/it-architecture-diagrams)
-- [Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-getting-started&interface=ui)
 
 ## License
 
