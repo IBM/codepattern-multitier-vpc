@@ -47,9 +47,9 @@
 
 | Key | Value | Sensitive |
 | --- | --- | --- |
-| dbpassword | securepassw0rd | Yes |
-| logdna_key | 143c30a06ac6dfae03b3a84259bf1b9e | Yes |
-| sysdig_key | 55e7f496-af78-4e0d-89f7-fa040e259ebd | Yes |
+| dbpassword | database password | Yes |
+| logdna_key | logdna key | Yes |
+| sysdig_key | sysdig key | Yes |
 | app_name | www<area>.yourdomain.com | No |
 | source_db | 172.21.1.4 | No |
 | replica_db | 172.21.9.4 | No |
