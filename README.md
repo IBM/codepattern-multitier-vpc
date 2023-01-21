@@ -164,9 +164,9 @@ We’ll be using the file [`data/assistant/workspaces/banking.json`](data/assist
 
 | Key | Value | Sensitive |
 | --- | --- | --- |
-| dbpassword | database password | Yes |
-| logdna_key | logdna key | Yes |
-| sysdig_key | sysdig key | Yes |
+| dbpassword | your database password | Yes |
+| logdna_key | your logdna key | Yes |
+| sysdig_key | your sysdig key | Yes |
 | app_name | www<area>.yourdomain.com | No |
 | source_db | 172.21.1.4 | No |
 | replica_db | 172.21.9.4 | No |

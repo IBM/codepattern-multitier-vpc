@@ -1,6 +1,6 @@
-dbpassword: database password
-logdna_key: logdna key
-sysdig_key: sysdig key
-app_name: www.drawit.tech
+dbpassword: your database password
+logdna_key: your logdna key
+sysdig_key: your sysdig key
+app_name: www.yourdomain.com
 source_db: 172.21.1.4
 replica_db: 172.21.9.4
