@@ -64,7 +64,7 @@ variable "ssh-public-key" {
 }
 variable "image" {
   description  = "Define OS image for compute instances (ibm-redhat-9-2-minimal-amd64-3)"
-  default      = "r006-44802d4c-5752-459c-aaed-4227da8fa29c
+  default      = "r006-44802d4c-5752-459c-aaed-4227da8fa29c"
 }
 variable "webappserver-name" {
   description = "Define webapp instance name"
